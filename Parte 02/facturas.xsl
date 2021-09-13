@@ -1,8 +1,10 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Grupo 05 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 <xsl:template match="registro">
 
     <html>
+      <!-- Asignar estilo css-->
     <link rel="stylesheet" type="text/css" href="estilo.css" />
     <body>
       <h1>Factura</h1>
@@ -16,12 +18,17 @@
         <tr><th>Nombre: <xsl:value-of select=".//nombre"/> </th></tr>
         <tr><th>Genero: <xsl:value-of select=".//@sexo"/> </th></tr>
         <tr><th> Codigo: <xsl:value-of select=".//@codigo"/> </th></tr>
+        <xsl:if test=".//dui" >
         <tr><th>DUI: <xsl:value-of select=".//dui"/> </th></tr>
+        </xsl:if>
+        <xsl:if test=".//pasaporte" >
         <tr><th>Pasaporte: <xsl:value-of select=".//pasaporte"/> (<xsl:value-of select=".//pasaporte/@pais"/>)</th></tr>
-        <tr><th>Telefono: <xsl:value-of select=".//telefono"/> (<xsl:value-of select=".//telefono/@tipo"/>-<xsl:value-of select=".//telefono/@cia"/>)</th></tr>
+        </xsl:if>
+        <tr><th>Telefono: <xsl:value-of select=".//telefono"/> (<xsl:value-of select=".//telefono/@tipo"/><xsl:if test=".//telefono/@cia" >-<xsl:value-of select=".//telefono/@cia"/></xsl:if>)</th></tr>
         <tr><th>Email: <xsl:value-of select=".//email"/></th></tr>
+        <xsl:if test=".//direccion" >
         <tr><th>Direccion: <xsl:value-of select=".//direccion/@depto"/>, <xsl:value-of select=".//direccion/@municipio"/>, <xsl:value-of select=".//casa"/> <xsl:value-of select=".//oficina"/></th></tr>
-        
+        </xsl:if>
         <tr><th>
           <table border="1" class="tabla2">
             <tr><th>Cantidad</th><th>Detalle</th><th>Precio</th><th>SubTotal</th></tr>
