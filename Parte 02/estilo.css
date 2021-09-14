@@ -1,0 +1,43 @@
+
+
+/*Parrafos*/
+p{
+    color: blue;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size:large;
+}
+th{
+    text-align: left;
+}
+/*Tabla contorno de la factura*/
+.tabla{
+    border: 1px solid ; 
+    width: 50%;
+    background-color: rgb(208, 226, 231);
+    table-layout: fixed;
+}
+/*Tablada datos de la factura*/
+.tabla2{
+    width: 100%;
+    border: 2px solid;
+    font-size: 100%;
+    border-collapse: collapse;
+    background-color: rgb(240, 206, 206);    
+}
+
+h1{
+    text-align: center;
+    font-size: 50;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.der{
+    text-align: right;
+}
+.izq{
+    text-align: left;
+}
+.color{
+    background-color: rgb(196, 222, 243);
+}
