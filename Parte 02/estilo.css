@@ -12,34 +12,57 @@ body{
 }
 h1{
     text-align: center;
-    font-size: 50;
-    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2cm;
+    font-family:'Times New Roman', Times, serif;
+    margin: 0%;
+    padding-top: 20px;
+    color:rgb(6, 15, 15);
 }
+
 .Texto{
-    color: blue;
+    color: rgb(29, 29, 36);
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
-    font-size:large;
+    font-size:0.50cm;
     display: block;
+    margin: 0%;
 }
 .negrita{
     font-weight: bold;
     display: inline-flex; 
     margin: 0%;
+    padding-right: 2px;
+    padding-left: 2px; 
+    font-family: "arial", serif;
 }
 .subrayado{
     text-decoration: underline;
     display: inline-flex;
-    margin: 0%;
+    padding-right: 5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 5px;
+    font-family: "arial", serif;
 }
 .normal{
     display: inline-flex;
     margin: 0%;
+    font-family: "arial", serif;
+}
+
+th{
+    text-align: center;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-family: "arial", serif;
+
 }
 /*TABLAS*/
 .tabla *{
     background-color: #BDDCD5 ;
-    text-align: left;
+    font-family: "arial", serif;
 }
 .der{
     text-align: right;
@@ -59,6 +82,10 @@ h1{
     border-collapse: collapse;
     margin-top: 1em;   
 }
+.bordes{
+    text-align: center;
+    font-family: "arial", serif;
+}
 .bordes, tbody,.color, .tabla2{
     border: 1px solid;
     border-color: #004234 ;
@@ -67,6 +94,6 @@ h1{
 .tabla2 .color th{
     background-color: #004234 ;
     color:#cce6e0 ;
-  }
+}
 
 

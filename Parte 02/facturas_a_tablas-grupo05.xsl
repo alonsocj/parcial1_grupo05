@@ -26,12 +26,12 @@
       
       <table class="tabla">
         
-        <tr><td><p class="negrita"> Factura No. </p><p class="subrayado"><xsl:value-of select=".//num"/>______</p> 
+        <tr><td colspan="2"><p class="negrita"> Factura No. </p><p class="subrayado"><xsl:value-of select=".//num"/>______</p> 
           <p class="negrita"> Tipo: </p> <p class="normal"> <xsl:if test=".//@tipo = 'final'" >Consumidor <xsl:value-of select=".//@tipo"/></xsl:if>
           <xsl:if test=".//@tipo = 'credito'" >comprobante de <xsl:value-of select=".//@tipo"/> fiscal</xsl:if></p>
         </td></tr>
 
-        <tr><th>Cliente</th></tr>
+        <tr><th colspan="2">Cliente</th></tr>
         <tr><td><p class="negrita"> Nombre: </p><xsl:value-of select=".//nombre"/> </td><td><p class="negrita"> Genero: </p><xsl:value-of select=".//@sexo"/> </td></tr>
         <tr>
           <xsl:if test=".//dui" >
