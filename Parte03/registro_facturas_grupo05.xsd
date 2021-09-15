@@ -284,7 +284,7 @@ evitar la escritura masiva de codigo y hacer buenas practicas de programación--
 <!--Validacion codigo-->
 <xs:simpleType name="format_cod">
   <xs:restriction base="xs:unsignedShort">
-  <xs:pattern value="[0-9]{4}"/>
+  <xs:pattern value="[0-9]{3,4}"/>
   </xs:restriction>
 </xs:simpleType>
 
