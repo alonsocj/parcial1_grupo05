@@ -4,7 +4,7 @@
   <xs:element name="registro">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="responsable" type="xs:string"/>
+        <xs:element name="responsable" type="format_resp"/>
         
         <xs:element name="factura" maxOccurs="unbounded">
           <xs:complexType>
@@ -35,8 +35,8 @@
                           <xs:element name="pasaporte">
                             <xs:complexType>
                               <xs:simpleContent>
-                                <xs:extension base="xs:string">
-                                  <xs:attribute name="pais" type="xs:string" use="required"/>
+                                <xs:extension base="format_pasaport">
+                                  <xs:attribute name="pais" type="format_pais" use="required"/>
                                 </xs:extension>
                               </xs:simpleContent>
                             </xs:complexType>
@@ -51,7 +51,7 @@
                       <xs:complexType>
                         <xs:simpleContent>
                           <xs:extension base="format_telefono">
-                            <xs:attribute name="tipo" type="xs:string" use="required"/>
+                            <xs:attribute name="tipo" type="format_tipotelefono" use="required"/>
                             <xs:attribute name="cia" type="format_cia" use="optional"/>
                           </xs:extension>
                         </xs:simpleContent>
@@ -85,19 +85,18 @@
                     <xs:element name="codigo">
                       <xs:complexType>
                         <xs:simpleContent>
-                          <xs:extension base="xs:unsignedShort">
-                            <xs:attribute name="tipo" type="xs:string" use="required"/>
+                          <xs:extension base="codefacture">
+                            <xs:attribute name="tipo" type="format_codLinfacture" use="required"/>
                           </xs:extension>
                         </xs:simpleContent>
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="detalle" type="format_detalle"/>
-                    <xs:element name="cantidad" type="xs:double"/>
+                    <xs:element name="cantidad" type="format_cantidad"/>
                     <xs:element name="precio">
                       <xs:complexType>
                         <xs:sequence>
-                          <!--<xs:element name="moneda" type="xs:string"/>
-                          <xs:element name="valor" type="format_precio"/> -->
+                          <!--III.1.9 Uso de referencia-->
                           <xs:group ref="grupo_ingresos"/>
                         </xs:sequence>
                       </xs:complexType>
@@ -105,22 +104,20 @@
                     <xs:element name="subtotal">
                       <xs:complexType>
                         <xs:sequence>
-                        <!-- <xs:element name="moneda" type="xs:string"/>
-                          <xs:element name="valor" type="format_precio"/>--> 
+                        <!--III.1.9 Uso de referencia-->
                           <xs:group ref="grupo_ingresos"/>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
                   </xs:sequence>
-                  <xs:attribute name="factura" type="xs:unsignedShort" use="required"/>
+                  <xs:attribute name="factura" type="codelineafacture" use="required"/>
                 </xs:complexType>
               </xs:element>
 
               <xs:element name="total">
                 <xs:complexType>
                   <xs:sequence>
-                     <!--<xs:element name="moneda" type="xs:string"/>
-                    <xs:element name="valor" type="format_precio"/> -->
+                  <!--III.1.9 Uso de referencia-->
                     <xs:group ref="grupo_ingresos"/>
                   </xs:sequence>
                 </xs:complexType>
@@ -130,7 +127,7 @@
           </xs:complexType>
         </xs:element>
       </xs:sequence>
-      <xs:attribute name="periodo" type="xs:string" use="required"/>
+      <xs:attribute name="periodo" type="format_periodo" use="required"/>
     </xs:complexType>
   </xs:element>
   
@@ -139,9 +136,8 @@
 <!--He definido UNA SOLA estructura para que podamos modificarlo de acuerdo a reutilización y
 evitar la escritura masiva de codigo y hacer buenas practicas de programación-->
 
-<!--Cada vez que lo utilice debo de indicarlo-->
-
-<!--III.1.1-Debe de usar dos enumeraciones de entre 3 y 5 o más elementos cada una-->
+<!-- AL MOMENTO DE REVISION ESTA SERIE DE COMENTARIOS SE ELIMINARA-->
+<!--III.1.1-Debe de usar dos enumeraciones de entre 3 y 5 o más elementos cada una OK!-->
 <!--III.1.2-Debe usar tres patrones o expresiones regulares OK!-->
 <!--III.1.3-Debe usar dos definiciones de tipos simples  OK! --> 
 <!--III.1.4-Debe usar dos definiciones de tipo complejo OK! -->
@@ -149,7 +145,39 @@ evitar la escritura masiva de codigo y hacer buenas practicas de programación--
 <!--III.1.6-Debe usar tipos simples fecha, entero, decimal OK!-->
 <!--III.1.7-Debe usar restricciones de longitud OK!-->
 <!--III.1.8-Debe usar restricciones de total de dígitos y dígitos de fracción OK!-->
-<!--III.1.9-Debe  usar una referencia-->
+<!--III.1.9-Debe usar una referencia OK! -->
+<!--III.1.10-Debe hacer cualquier modificación que considere necesaria 
+para cumplir los requerimientos y cumplir con III.2/III.3, ya sea al xml o a la xsd-->
+
+<!--III.1.1-->
+<!--Para atributo-->
+<xs:simpleType name="format_cia">
+  <xs:restriction base="xs:string">
+    <xs:enumeration value="tigo"/>
+    <xs:enumeration value="digicel"/>
+    <xs:enumeration value="claro"/>
+    <xs:enumeration value="movistar"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="format_tipotelefono">
+  <xs:restriction base="xs:string">
+    <xs:enumeration value="celular"/>
+    <xs:enumeration value="fijo"/>
+    <xs:enumeration value="fax"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<!--III.1.1-->
+<!--Codigo de linea factura, Su atributo-->
+<xs:simpleType name="format_codLinfacture">
+  <xs:restriction base="xs:string">
+    <xs:enumeration value="souvenir"/>
+    <xs:enumeration value="pcportatiles"/>
+    <xs:enumeration value="accesorio_pc"/>
+    <xs:enumeration value="perecedero"/>
+  </xs:restriction>
+</xs:simpleType>
 
 <!--III.1.3-->
 <xs:simpleType name="emailformat">
@@ -159,71 +187,20 @@ evitar la escritura masiva de codigo y hacer buenas practicas de programación--
 </xs:restriction>
 </xs:simpleType>
 
-<xs:simpleType name="format_precio">
-<xs:restriction base="xs:decimal">
-  <xs:minInclusive value="0.01"/>
-  <xs:maxInclusive value="9999.99"/>
-  <xs:totalDigits value="6"/>
-  <xs:fractionDigits value="2"/>
-</xs:restriction>
-</xs:simpleType>
-
-<!--Definicion telefono-->
-
-<xs:simpleType name="format_telefono">
-  <xs:restriction base="xs:integer">
-<!--Utilizacion de una Expresion regular III.1.2-->
-  <xs:pattern value="[0-9]{8}"/>
-  </xs:restriction>
-</xs:simpleType>
-
-<!--Para atributo-->
-<xs:simpleType name="format_cia">
-  <xs:restriction base="xs:string">
-  <xs:pattern value="tigo|digicel|claro"/>
-  </xs:restriction>
-</xs:simpleType>
-
-<!--Definicion nombre, detalle, y direccion-->
-<!--III.1.7 Utilización de reestricciones de longitud-->
-
-<xs:simpleType name="format_name">
-  <xs:restriction base="xs:string">
-    <xs:minLength value="10"/>
-    <xs:maxLength value="25"/>
-  </xs:restriction>
-</xs:simpleType>
-
-<xs:simpleType name="format_lugar">
-  <xs:restriction base="xs:string">
-    <xs:minLength value="7"/>
-    <xs:maxLength value="30"/>
-  </xs:restriction>
-</xs:simpleType>
-
-<xs:simpleType name="format_detalle">
-  <xs:restriction base="xs:string">
-    <xs:minLength value="10"/>
-    <xs:maxLength value="50"/>
-  </xs:restriction>
-</xs:simpleType>
-
 <!--Definicion de grupo III.1.5-->
-
 <xs:group name="grupo_ingresos">
   <xs:sequence>
-     <xs:element name="moneda" type="xs:string"/>
+     <xs:element name="moneda" type="format_coin"/>
      <xs:element name="valor" type="format_precio"/>
   </xs:sequence>
 </xs:group>
 
-<!--Dui y pasaporte-->
+<!--III.1.6-->
 
-<!--Dui-->
-<xs:simpleType name="format_dui">
-  <xs:restriction base="xs:string">
-<!--Utilizacion de una Expresion regular III.1.2-->
-    <xs:pattern value="[0-9]{8}[\-][0-9]{1}"/>
+<!--Validacion cantidad-->
+<xs:simpleType name="format_cantidad">
+  <xs:restriction base="xs:double">
+    <xs:minInclusive value="1"/>
   </xs:restriction>
 </xs:simpleType>
 
@@ -235,6 +212,72 @@ evitar la escritura masiva de codigo y hacer buenas practicas de programación--
   </xs:restriction>
 </xs:simpleType>
 
+<!--Definicion telefono-->
+<xs:simpleType name="format_telefono">
+  <xs:restriction base="xs:integer">
+<!--Utilizacion de una Expresion regular III.1.2-->
+  <xs:pattern value="[0-9]{8}"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<!--Definicion nombre, detalle, y direccion-->
+<!--III.1.7 Utilización de reestricciones de longitud-->
+<xs:simpleType name="format_name">
+  <xs:restriction base="xs:string">
+    <xs:minLength value="10"/>
+    <xs:maxLength value="25"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="format_lugar">
+  <xs:restriction base="xs:string">
+    <xs:minLength value="7"/>
+    <xs:maxLength value="40"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="format_detalle">
+  <xs:restriction base="xs:string">
+    <xs:minLength value="10"/>
+    <xs:maxLength value="50"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<!--III.1.8-->
+<xs:simpleType name="format_precio">
+<xs:restriction base="xs:decimal">
+  <xs:minInclusive value="0.01"/>
+  <xs:maxInclusive value="9999.99"/>
+  <xs:totalDigits value="6"/>
+  <xs:fractionDigits value="2"/>
+</xs:restriction>
+</xs:simpleType>
+
+<!--Otras validaciones del XML [Utilizando requerimientos solicitados] -->
+
+<!--Validar codigo de linea de factura-->
+<xs:simpleType name="codefacture">
+  <xs:restriction base="xs:string">
+<!--Utilizacion de una Expresion regular III.1.2-->
+    <xs:pattern value="[0-9]{3}"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="codelineafacture">
+  <xs:restriction base="xs:string">
+<!--Utilizacion de una Expresion regular III.1.2-->
+    <xs:pattern value="[0-9]{3}"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<!--Dui-->
+<xs:simpleType name="format_dui">
+  <xs:restriction base="xs:string">
+<!--Utilizacion de una Expresion regular III.1.2-->
+    <xs:pattern value="[0-9]{8}[\-][0-9]{1}"/>
+  </xs:restriction>
+</xs:simpleType>
+
 <!--Pasaporte-->
 <xs:simpleType name="format_pasaport">
   <xs:restriction base="xs:string">
@@ -243,7 +286,7 @@ evitar la escritura masiva de codigo y hacer buenas practicas de programación--
   </xs:restriction>
 </xs:simpleType>
 
-<!--Fecha de vencimiento-->
+<!--Pais pasaporte-->
 <xs:simpleType name="format_pais">
   <xs:restriction base="xs:string">
 <!--Utilizacion de una Expresion regular III.1.2-->
@@ -273,7 +316,6 @@ evitar la escritura masiva de codigo y hacer buenas practicas de programación--
 </xs:simpleType>
 
 <!--Cliente-->
-
 <!--Validacion sexo-->
 <xs:simpleType name="format_gen">
   <xs:restriction base="xs:string">
@@ -295,6 +337,25 @@ evitar la escritura masiva de codigo y hacer buenas practicas de programación--
   </xs:restriction>
 </xs:simpleType>
 
+<!--Validacion moneda-->
+<xs:simpleType name="format_coin">
+  <xs:restriction base="xs:string">
+    <xs:pattern value="[$]"/>
+  </xs:restriction>
+</xs:simpleType>
 
+<!--Validacion responsable-->
+<xs:simpleType name="format_resp">
+  <xs:restriction base="xs:string">
+    <xs:pattern value="([Lic]|[Ing]|[Msc]|[Inga])+([\.][ ][a-zA-Záéíóú]+[ ]+[a-zA-Záéíóú]+)"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<!--Periodo-->
+<xs:simpleType name="format_periodo">
+  <xs:restriction base="xs:gYearMonth">
+    <xs:pattern value="[2][0]([0-2][0-1]|[0-1][0-9])[\-]([0][1-9]|[1][0-2])"/>
+  </xs:restriction>
+</xs:simpleType>
 
 </xs:schema>
