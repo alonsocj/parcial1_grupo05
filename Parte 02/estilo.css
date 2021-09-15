@@ -1,52 +1,27 @@
-.Texto{
-    color: blue;
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    font-size:large;
+*{
+    background-color: #399C80 ;
 }
-th{
-    text-align: left;
+body{
+    background-attachment: fixed;
+    background-position:center;
+    display:flex;
+    flex-direction:column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
-/*Tabla contorno de la factura*/
-.tabla{
-    border: 1px solid ; 
-    width: 50%;
-    background-color: rgb(208, 226, 231);
-    table-layout: fixed;
-    margin-top: 100px;
-}
-/*Tablada datos de la factura*/
-.tabla2{
-    width: 100%;
-    border: 2px solid;
-    font-size: 100%;
-    border-collapse: collapse;
-    background-color: rgb(240, 206, 206); 
-       
-}
-tbody{
-    border: 1px solid;
-}
-
 h1{
     text-align: center;
     font-size: 50;
     font-family: 'Times New Roman', Times, serif;
 }
-.bordes{
-    border: 1px solid;
+.Texto{
+    color: blue;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size:large;
+    display: block;
 }
-.der{
-    text-align: right;
-}
-.izq{
-    text-align: left;
-}
-.color{
-    background-color: rgb(196, 222, 243);
-    border: 1px solid;
-}
-
 .negrita{
     font-weight: bold;
     display: inline-flex; 
@@ -61,3 +36,37 @@ h1{
     display: inline-flex;
     margin: 0%;
 }
+/*TABLAS*/
+.tabla *{
+    background-color: #BDDCD5 ;
+    text-align: left;
+}
+.der{
+    text-align: right;
+    padding-right: 1em;
+}
+/*Tabla contorno de la factura*/
+.tabla{
+    width: 50%;
+    background-color: #BDDCD5 ;
+    margin-top: 2em;
+    padding: 1em;
+}
+/*Tablada datos de la factura*/
+.tabla2{
+    width: 100%;
+    font-size: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;   
+}
+.bordes, tbody,.color, .tabla2{
+    border: 1px solid;
+    border-color: #004234 ;
+}
+
+.tabla2 .color th{
+    background-color: #004234 ;
+    color:#cce6e0 ;
+  }
+
+
