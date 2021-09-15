@@ -1,7 +1,4 @@
-
-
-/*Parrafos*/
-p{
+.Texto{
     color: blue;
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
@@ -16,6 +13,7 @@ th{
     width: 50%;
     background-color: rgb(208, 226, 231);
     table-layout: fixed;
+    margin-top: 100px;
 }
 /*Tablada datos de la factura*/
 .tabla2{
@@ -23,7 +21,11 @@ th{
     border: 2px solid;
     font-size: 100%;
     border-collapse: collapse;
-    background-color: rgb(240, 206, 206);    
+    background-color: rgb(240, 206, 206); 
+       
+}
+tbody{
+    border: 1px solid;
 }
 
 h1{
@@ -31,7 +33,9 @@ h1{
     font-size: 50;
     font-family: 'Times New Roman', Times, serif;
 }
-
+.bordes{
+    border: 1px solid;
+}
 .der{
     text-align: right;
 }
@@ -40,4 +44,20 @@ h1{
 }
 .color{
     background-color: rgb(196, 222, 243);
+    border: 1px solid;
+}
+
+.negrita{
+    font-weight: bold;
+    display: inline-flex; 
+    margin: 0%;
+}
+.subrayado{
+    text-decoration: underline;
+    display: inline-flex;
+    margin: 0%;
+}
+.normal{
+    display: inline-flex;
+    margin: 0%;
 }
