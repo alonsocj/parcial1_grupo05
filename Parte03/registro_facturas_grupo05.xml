@@ -204,5 +204,71 @@
     </factura>
 
     <!--Agregar las 4 facturas faltantes-->
+     
+    <!--factura 7 -->
+   
+     <factura tipo="final">
+        <num>264</num>
+        <cliente codigo="0867" sexo="masculino">
+            <nombre>Julio Josè</nombre>
+            <documento>
+                <dui vence="2019-09-12">09870904-2</dui>
+            </documento>
+            <telefono tipo="celular" cia="claro">76982148</telefono>
+            <email>juljos@gmail.com</email>
+        </cliente>
+        <direccion depto="La Libertad" municipio="Santa Tecla">
+            <oficina>2a Av. Norte</oficina>
+        </direccion>
+        <lineafactura factura="139">
+            <codigo tipo="perecedero">352</codigo>
+            <detalle>Carne de res</detalle>
+            <cantidad>2</cantidad>
+            <precio>
+                <moneda>$</moneda>
+                <valor>4.15</valor>
+            </precio>
+            <subtotal>
+                <moneda>$</moneda>
+                <valor>8.30</valor>
+            </subtotal>
+        </lineafactura>
+        <total>
+            <moneda>$</moneda>
+            <valor>8.30</valor>
+        </total>
+    </factura>
+
+ 
+    <!--factura 8-->
+    <factura tipo="final">
+        <num>352</num>
+        <cliente codigo="125" sexo="femenino">
+            <nombre>Celeste Lopèz</nombre>
+            <documento>
+                <pasaporte pais="HND">C28792473</pasaporte>
+            </documento>
+            <telefono tipo="celular" cia="movistar">73209745</telefono>
+            <email>cello@hotmail.com</email>
+        </cliente>
+        <lineafactura factura="209">
+            <codigo tipo="accesorio_pc">654</codigo>
+            <detalle>Teclado para PC</detalle>
+            <cantidad>2</cantidad>
+            <precio>
+                <moneda>$</moneda>
+                <valor>35.00</valor>
+            </precio>
+            <subtotal>
+                <moneda>$</moneda>
+                <valor>70.00</valor>
+            </subtotal>
+        </lineafactura>
+        <total>
+            <moneda>$</moneda>
+            <valor>70.00</valor>
+        </total>
+    </factura>
+
 
 </registro>
