@@ -187,22 +187,22 @@ evitar la escritura masiva de codigo y hacer buenas practicas de programación--
 
 <xs:simpleType name="format_name">
   <xs:restriction base="xs:string">
-    <minLength value="15"/>
-    <maxLength value= "25"/>
+    <xs:minLength value="10"/>
+    <xs:maxLength value="25"/>
   </xs:restriction>
 </xs:simpleType>
 
 <xs:simpleType name="format_lugar">
   <xs:restriction base="xs:string">
-    <minLength value="15"/>
-    <maxLength value= "30"/>
+    <xs:minLength value="7"/>
+    <xs:maxLength value="30"/>
   </xs:restriction>
 </xs:simpleType>
 
 <xs:simpleType name="format_detalle">
   <xs:restriction base="xs:string">
-    <minLength value="15"/>
-    <maxLength value= "30"/>
+    <xs:minLength value="10"/>
+    <xs:maxLength value="50"/>
   </xs:restriction>
 </xs:simpleType>
 

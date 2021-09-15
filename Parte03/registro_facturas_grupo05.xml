@@ -186,7 +186,7 @@
         </direccion>
         <lineafactura factura="575">
             <codigo tipo="accesorio_pc">247</codigo>
-            <detalle>Mouse inalámbrico</detalle>
+            <detalle>Mouse inalambrico</detalle>
             <cantidad>10</cantidad>
             <precio>
                 <moneda>$</moneda>
