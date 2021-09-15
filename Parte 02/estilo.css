@@ -20,7 +20,6 @@ h1{
     padding-top: 20px;
     color:rgb(6, 15, 15);
 }
-
 .Texto{
     color: rgb(29, 29, 36);
     text-align: center;
@@ -51,7 +50,6 @@ h1{
     margin: 0%;
     font-family: "arial", serif;
 }
-
 th{
     text-align: center;
     padding-top: 6px;
@@ -90,7 +88,6 @@ th{
     border: 1px solid;
     border-color: #004234 ;
 }
-
 .tabla2 .color th{
     background-color: #004234 ;
     color:#cce6e0 ;
