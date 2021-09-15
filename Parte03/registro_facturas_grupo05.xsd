@@ -96,16 +96,18 @@
                     <xs:element name="precio">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="moneda" type="xs:string"/>
-                          <xs:element name="valor" type="format_precio"/>
+                          <!--<xs:element name="moneda" type="xs:string"/>
+                          <xs:element name="valor" type="format_precio"/> -->
+                          <xs:group ref="grupo_ingresos"/>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="subtotal">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="moneda" type="xs:string"/>
-                          <xs:element name="valor" type="format_precio"/>
+                        <!-- <xs:element name="moneda" type="xs:string"/>
+                          <xs:element name="valor" type="format_precio"/>--> 
+                          <xs:group ref="grupo_ingresos"/>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
@@ -114,12 +116,12 @@
                 </xs:complexType>
               </xs:element>
 
-
               <xs:element name="total">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="moneda" type="xs:string"/>
-                    <xs:element name="valor" type="format_precio"/>
+                     <!--<xs:element name="moneda" type="xs:string"/>
+                    <xs:element name="valor" type="format_precio"/> -->
+                    <xs:group ref="grupo_ingresos"/>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
@@ -140,10 +142,10 @@ evitar la escritura masiva de codigo y hacer buenas practicas de programación--
 <!--Cada vez que lo utilice debo de indicarlo-->
 
 <!--III.1.1-Debe de usar dos enumeraciones de entre 3 y 5 o más elementos cada una-->
-<!--III.1.2-Debe usar tres patrones o expresiones regulares-->
+<!--III.1.2-Debe usar tres patrones o expresiones regulares 2/3-->
 <!--III.1.3-Debe usar dos definiciones de tipos simples  OK! --> 
 <!--III.1.4-Debe usar dos definiciones de tipo complejo OK! -->
-<!--III.1.5-Debe de usar un grupo-->
+<!--III.1.5-Debe de usar un grupo OK!-->
 <!--III.1.6-Debe usar tipos simples fecha, entero, decimal-->
 <!--III.1.7-Debe usar restricciones de longitud OK!-->
 <!--III.1.8-Debe usar restricciones de total de dígitos y dígitos de fracción OK!-->
@@ -205,6 +207,15 @@ evitar la escritura masiva de codigo y hacer buenas practicas de programación--
     <xs:maxLength value="50"/>
   </xs:restriction>
 </xs:simpleType>
+
+<!--Definicion de grupo III.1.5-->
+
+<xs:group name="grupo_ingresos">
+  <xs:sequence>
+     <xs:element name="moneda" type="xs:string"/>
+     <xs:element name="valor" type="format_precio"/>
+  </xs:sequence>
+</xs:group>
 
 
 
