@@ -1,3 +1,5 @@
+/* estilo.css GRUPO 05*/
+
 *{
     background-color: #399C80 ;
 }
@@ -18,15 +20,16 @@ h1{
     font-family:'Times New Roman', Times, serif;
     margin: 0%;
     padding-top: 20px;
-    color:rgb(6, 15, 15);
+    color:white;
 }
 .Texto{
-    color: rgb(29, 29, 36);
+    color: rgb(0, 4, 61);
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
-    font-size:0.50cm;
+    font-size:0.75cm;
     display: block;
     margin: 0%;
+    font-weight: normal;
 }
 .negrita{
     font-weight: bold;
