@@ -146,7 +146,7 @@ evitar la escritura masiva de codigo y hacer buenas practicas de programación--
 <!--III.1.3-Debe usar dos definiciones de tipos simples  OK! --> 
 <!--III.1.4-Debe usar dos definiciones de tipo complejo OK! -->
 <!--III.1.5-Debe de usar un grupo OK!-->
-<!--III.1.6-Debe usar tipos simples fecha, entero, decimal-->
+<!--III.1.6-Debe usar tipos simples fecha, entero, decimal OK!-->
 <!--III.1.7-Debe usar restricciones de longitud OK!-->
 <!--III.1.8-Debe usar restricciones de total de dígitos y dígitos de fracción OK!-->
 <!--III.1.9-Debe  usar una referencia-->
@@ -236,5 +236,16 @@ evitar la escritura masiva de codigo y hacer buenas practicas de programación--
   <xs:pattern value="[2][0]([0-2][0-1]|[0-1][0-9])[\-]((([0][1]|[0][3]|[0][5]|[0][7]|[0][8]|[1][0]|[1][2])[\-]([0][1-9]|[1-2][0-9]|[3][0-1]))|(([0][4]|[0][6]|[0][9]|[0][7]|[1][1])[\-]([0][1-9]|[1-2][0-9]|[3][0]))|(([0][2])[\-]([0][1-9]|[1-2][0-8])))"/>
   </xs:restriction>
 </xs:simpleType>
+
+<!--Validar
+
+pasaporte
+departamento
+codigo donde esta el cliente
+sexo
+tipo de codigo
+cantidad
+
+-->
 
 </xs:schema>
