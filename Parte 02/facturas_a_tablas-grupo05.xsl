@@ -10,7 +10,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       <title>Facturas Grupo 05</title>
       <meta name="author" content="Miguel Angel Amaya Rodriguez"></meta>
-      <meta name="author" content="José Diego Ayala Guerra"></meta>
+      <meta name="author" content="Christian Javier Ayala Guerra"></meta>
+      <meta name="author" content="Diego José Ayala Guerra"></meta>
       <meta name="author" content="Luis Alonso Cornejo Jiménez"></meta>
       <meta name="author" content="Carolina Isabel Pineda Delgado"></meta>
       <meta name="author" content="José Gustavo Pineda Delgado"></meta>
