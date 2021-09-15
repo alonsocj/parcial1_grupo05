@@ -9,7 +9,7 @@
         <xs:element name="factura" maxOccurs="unbounded">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="num" type="xs:unsignedShort"/>
+              <xs:element name="num" type="format_num"/>
               
               <xs:element name="cliente">
                 <xs:complexType>
@@ -61,8 +61,8 @@
 
                     <xs:element name="email" type="emailformat"/>
                   </xs:sequence>
-                  <xs:attribute name="codigo" type="xs:unsignedShort" use="required"/>
-                  <xs:attribute name="sexo" type="xs:string" use="required"/>
+                  <xs:attribute name="codigo" type="format_cod" use="required"/>
+                  <xs:attribute name="sexo" type="format_gen" use="required"/>
                 </xs:complexType>
               </xs:element>
 
@@ -73,8 +73,8 @@
                     <xs:element name="casa" type="format_lugar"/>
                     <xs:element name="oficina" type="format_lugar"/>
                   </xs:choice>
-                  <xs:attribute name="depto" type="xs:string" use="required"/>
-                  <xs:attribute name="municipio" type="xs:string" use="required"/>
+                  <xs:attribute name="depto" type="format_depart" use="required"/>
+                  <xs:attribute name="municipio" type="format_municipio" use="required"/>
                 </xs:complexType>
               </xs:element>
 
@@ -126,7 +126,7 @@
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
-            <xs:attribute name="tipo" type="xs:string" use="required"/>
+            <xs:attribute name="tipo" type="format_factura" use="required"/>
           </xs:complexType>
         </xs:element>
       </xs:sequence>
@@ -228,8 +228,6 @@ evitar la escritura masiva de codigo y hacer buenas practicas de programación--
 </xs:simpleType>
 
 <!--Fecha de vencimiento-->
-
-<!--Para atributo-->
 <xs:simpleType name="format_vencimiento">
   <xs:restriction base="xs:date">
 <!--Utilizacion de una Expresion regular III.1.2-->
@@ -237,15 +235,66 @@ evitar la escritura masiva de codigo y hacer buenas practicas de programación--
   </xs:restriction>
 </xs:simpleType>
 
-<!--Validar
+<!--Pasaporte-->
+<xs:simpleType name="format_pasaport">
+  <xs:restriction base="xs:string">
+<!--Utilizacion de una Expresion regular III.1.2-->
+    <xs:pattern value="[A-Z]{1}[0-9]{8}"/>
+  </xs:restriction>
+</xs:simpleType>
 
-pasaporte
-departamento
-codigo donde esta el cliente
-sexo
-tipo de codigo
-cantidad
+<!--Fecha de vencimiento-->
+<xs:simpleType name="format_pais">
+  <xs:restriction base="xs:string">
+<!--Utilizacion de una Expresion regular III.1.2-->
+  <xs:pattern value="[A-Z]{3}"/>
+  </xs:restriction>
+</xs:simpleType>
 
--->
+<!--Num-->
+<xs:simpleType name="format_num">
+  <xs:restriction base="xs:unsignedShort">
+<!--Utilizacion de una Expresion regular III.1.2-->
+    <xs:pattern value="[0-9]{3}"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<!--Direccion atributos-->
+<xs:simpleType name="format_depart">
+  <xs:restriction base="xs:string">
+    <xs:maxLength value="12"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="format_municipio">
+  <xs:restriction base="xs:string">
+    <xs:maxLength value="30"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<!--Cliente-->
+
+<!--Validacion sexo-->
+<xs:simpleType name="format_gen">
+  <xs:restriction base="xs:string">
+  <xs:pattern value="femenino|masculino"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<!--Validacion codigo-->
+<xs:simpleType name="format_cod">
+  <xs:restriction base="xs:unsignedShort">
+  <xs:pattern value="[0-9]{4}"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<!--Factura-->
+<xs:simpleType name="format_factura">
+  <xs:restriction base="xs:string">
+  <xs:pattern value="final|credito"/>
+  </xs:restriction>
+</xs:simpleType>
+
+
 
 </xs:schema>
