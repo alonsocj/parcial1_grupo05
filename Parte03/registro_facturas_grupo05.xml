@@ -9,41 +9,41 @@
         <num>564</num>
 
         <cliente codigo="2617" sexo="femenino">
-            <nombre>María Vélez</nombre> 
+            <nombre>María Vélez</nombre>
             <documento>
-                <dui vence="2018-03-03">02349867-9</dui> 
+                <dui vence="2018-03-03">02349867-9</dui>
             </documento>
-            <telefono tipo="fijo">24356789</telefono> 
-            <email>mariav@gmail.com</email> 
+            <telefono tipo="fijo">24356789</telefono>
+            <email>mariav@gmail.com</email>
         </cliente>
 
         <direccion depto="San Salvador" municipio="San Salvador">
-            <casa>Prados del Bosque Num.23</casa> 
+            <casa>Prados del Bosque Num.23</casa>
         </direccion>
 
         <lineafactura factura="564">
-            <codigo tipo="souvenir">498</codigo> 
-            <detalle>Llavero estampas de mi pueblo: Izalco</detalle> 
-            <cantidad>10</cantidad> 
-            
+            <codigo tipo="souvenir">498</codigo>
+            <detalle>Llavero estampas de mi pueblo: Izalco</detalle>
+            <cantidad>10</cantidad>
+
             <precio>
-                <moneda>$</moneda> 
-                <valor>1.13</valor> 
+                <moneda>$</moneda>
+                <valor>1.13</valor>
             </precio>
 
             <subtotal>
-                <moneda>$</moneda> 
-                <valor>11.30</valor> 
+                <moneda>$</moneda>
+                <valor>11.30</valor>
             </subtotal>
-            
+
         </lineafactura>
-        
+
         <total>
             <moneda>$</moneda>
-            <valor>11.30</valor> 
+            <valor>11.30</valor>
         </total>
     </factura>
-    
+
     <!--Factura 2 -->
     <factura tipo="credito">
         <num>570</num>
@@ -76,7 +76,7 @@
             <valor>1050.00</valor>
         </total>
     </factura>
-    
+
     <!--factura 3-->
     <factura tipo="credito">
         <num>575</num>
@@ -109,7 +109,7 @@
             <valor>50.00</valor>
         </total>
     </factura>
-    
+
     <!--factura 4 -->
     <factura tipo="final">
         <num>590</num>
@@ -139,7 +139,7 @@
             <valor>5.00</valor>
         </total>
     </factura>
-    
+
     <!--factura 5-->
     <factura tipo="final">
         <num>593</num>
@@ -169,7 +169,7 @@
             <valor>5.00</valor>
         </total>
     </factura>
-    
+
     <!--factura 6 -->
     <factura tipo="credito">
         <num>585</num>
@@ -204,10 +204,10 @@
     </factura>
 
     <!--Agregar las 4 facturas faltantes-->
-     
+
     <!--factura 7 -->
-   
-     <factura tipo="final">
+
+    <factura tipo="final">
         <num>264</num>
         <cliente codigo="0867" sexo="masculino">
             <nombre>Julio Josè</nombre>
@@ -239,7 +239,7 @@
         </total>
     </factura>
 
- 
+
     <!--factura 8-->
     <factura tipo="final">
         <num>352</num>
@@ -269,6 +269,71 @@
             <valor>70.00</valor>
         </total>
     </factura>
+    <!-- FACTURA 9-->
+    <factura tipo="credito">
+        <num>102</num>
+        <cliente codigo="2753" sexo="femenino">
+            <nombre>Monet Lott</nombre>
+            <documento>
+                <dui vence="2002-10-12">56457436-1</dui>
+            </documento>
+            <telefono tipo="celular">78952165</telefono>
+            <email>mlott@email.com</email>
+        </cliente>
+        <direccion depto="Usulutan" municipio="Berlin">
+            <oficina>Final 24 Av. Sur</oficina>
+        </direccion>
+        <lineafactura factura="650">
+            <codigo tipo="accesorio_pc">580</codigo>
+            <detalle>Procesador Ryzon</detalle>
+            <cantidad>1</cantidad>
+            <precio>
+                <moneda>$</moneda>
+                <valor>450</valor>
+            </precio>
+            <subtotal>
+                <moneda>$</moneda>
+                <valor>450</valor>
+            </subtotal>
+        </lineafactura>
+        <total>
+            <moneda>$</moneda>
+            <valor>450</valor>
+        </total>
+    </factura>
 
+    <!-- FACTURA 10-->
+
+    <factura tipo="credito">
+        <num>031</num>
+        <cliente codigo="2156" sexo="masculino">
+            <nombre>Adam Zapel</nombre>
+            <documento>
+                <dui vence="2012-11-25">65147852-5</dui>
+            </documento>
+            <telefono tipo="celular">66425485</telefono>
+            <email>zadam@gmail.com</email>
+        </cliente>
+        <direccion depto="San Salvador" municipio="soyapango">
+            <oficina>35 Av. Norte</oficina>
+        </direccion>
+        <lineafactura factura="904">
+            <codigo tipo="accesorio_pc">302</codigo>
+            <detalle>Teclado Mecanico</detalle>
+            <cantidad>5</cantidad>
+            <precio>
+                <moneda>$</moneda>
+                <valor>105</valor>
+            </precio>
+            <subtotal>
+                <moneda>$</moneda>
+                <valor>105</valor>
+            </subtotal>
+        </lineafactura>
+        <total>
+            <moneda>$</moneda>
+            <valor>105</valor>
+        </total>
+    </factura>
 
 </registro>
