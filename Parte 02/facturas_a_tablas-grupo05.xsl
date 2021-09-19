@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Grupo 05 -->
+<!-- facturas_a_tablas-grupo05.xsl Grupo 05 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 <xsl:template match="registro">
   <html>
