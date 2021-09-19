@@ -17,7 +17,6 @@
       <meta name="author" content="William Enrique Vásquez Mancia">
       <meta name="keywords" content="XML, XSD, CSS, HTML, XSL">
       <meta name="description" content="Examen Parcial 1 TPI115-2021">
-      <title>Facturas Grupo 05</title>
       <!-- Asignar estilo css-->
       <link rel="stylesheet" type="text/css" href="estilo.css" />
     </head>
