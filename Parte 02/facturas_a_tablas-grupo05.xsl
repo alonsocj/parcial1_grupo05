@@ -4,17 +4,19 @@
 <xsl:template match="registro">
   <html>
     <head>
-      <meta charset="UTF-8"></meta>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+      <meta charset="UTF-8"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta name="author" content="Miguel Angel Amaya Rodriguez"/>
+      <meta name="author" content="Christian Javier Ayala Guerra"/>
+      <meta name="author" content="Diego José Ayala Guerra"/>
+      <meta name="author" content="Luis Alonso Cornejo Jiménez"/>
+      <meta name="author" content="Carolina Isabel Pineda Delgado"/>
+      <meta name="author" content="José Gustavo Pineda Delgado"/>
+      <meta name="author" content="William Enrique Vásquez Mancia"/>
+      <meta name="keywords" content="XML, XSL"/>
+      <meta name="description" content="Parte 2 - Parcial 1 TPI115"/>
       <title>Facturas Grupo 05</title>
-      <meta name="author" content="Miguel Angel Amaya Rodriguez"></meta>
-      <meta name="author" content="Christian Javier Ayala Guerra"></meta>
-      <meta name="author" content="Diego José Ayala Guerra"></meta>
-      <meta name="author" content="Luis Alonso Cornejo Jiménez"></meta>
-      <meta name="author" content="Carolina Isabel Pineda Delgado"></meta>
-      <meta name="author" content="José Gustavo Pineda Delgado"></meta>
-      <meta name="author" content="William Enrique Vásquez Mancia"></meta>
       <!-- Asignar estilo css-->
       <link rel="stylesheet" type="text/css" href="estilo.css" />
     </head>
