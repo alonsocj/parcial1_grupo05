@@ -50,6 +50,7 @@ h2,h3{
 #autores p{
     padding-left: 6em;
     color: white;
+    line-height:15px;
 }
 #indice p{
     padding-left: 5em;
