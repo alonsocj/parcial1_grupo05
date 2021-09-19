@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Grupo 05  -->
 <!--Enlazar archivo xsd-->
-<registro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="registro_facturas_grupo05.xsd" periodo="2012-03">
+<registro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="registrofacturasgrupo05.xsd" periodo="2012-03">
     <responsable>Lic. Inocencio Pérez</responsable>
 
     <!--Factura 1 -->
