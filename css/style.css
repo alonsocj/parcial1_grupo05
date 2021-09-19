@@ -1,0 +1,82 @@
+/*  style.css grupo05 */
+*{
+    margin: 0;
+    padding:0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.main{
+    width: 100%;
+    background-image:linear-gradient(rgba(121, 106, 95, 0.460),rgba(121, 106, 95, 0.460)), url(../img/fondo.jpg);
+    opacity: 0.95;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position:center;
+    background-size: cover;
+    height:100vh;
+    
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+h1{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 3em;
+    color: #FF2D00;
+    font-weight: bold;
+    background-color: none;
+    padding-top: 10px;
+}
+body section{
+    width:80%;
+    min-height: 80%;
+    position:unset;
+    background: linear-gradient(rgba(0, 0, 0, 0.753),rgba(0, 0, 0, 0.753));
+    z-index: -1;
+    border-radius: 30px;
+}
+article{
+    padding: 2em;
+
+}
+h2,h3{
+    padding-left: 3em;
+    color: #EC7F0B;
+}
+#autores p{
+    padding-left: 6em;
+    color: white;
+}
+#indice p{
+    padding-left: 5em;
+    color: #EAA401;
+    font-size: 20px;
+}
+article ul li{
+    text-decoration: none;
+    list-style: none;
+}
+article ul li a{
+    text-decoration: none;
+}
+article ul li a{
+    color: white;
+    padding-left: 7em;
+}
+
+article ul li ul li a{
+    color: white;
+    text-decoration: none;
+    list-style: none;
+    padding-left: 8em;
+}
+article ul li ul li ul li a{
+    color: white;
+    text-decoration: none;
+    list-style: none;
+    padding-left: 9em;
+}
